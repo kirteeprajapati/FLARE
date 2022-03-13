@@ -2,13 +2,6 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const createPaymentIntent = /* GraphQL */ `
-  mutation CreatePaymentIntent($amount: Int!) {
-    createPaymentIntent(amount: $amount) {
-      clientSecret
-    }
-  }
-`;
 export const createProduct = /* GraphQL */ `
   mutation CreateProduct(
     $input: CreateProductInput!
@@ -25,11 +18,11 @@ export const createProduct = /* GraphQL */ `
       ratings
       price
       oldPrice
+      createdAt
+      updatedAt
       _version
       _deleted
       _lastChangedAt
-      createdAt
-      updatedAt
     }
   }
 `;
@@ -49,11 +42,11 @@ export const updateProduct = /* GraphQL */ `
       ratings
       price
       oldPrice
+      createdAt
+      updatedAt
       _version
       _deleted
       _lastChangedAt
-      createdAt
-      updatedAt
     }
   }
 `;
@@ -73,11 +66,11 @@ export const deleteProduct = /* GraphQL */ `
       ratings
       price
       oldPrice
+      createdAt
+      updatedAt
       _version
       _deleted
       _lastChangedAt
-      createdAt
-      updatedAt
     }
   }
 `;
@@ -103,17 +96,17 @@ export const createCartProduct = /* GraphQL */ `
         ratings
         price
         oldPrice
+        createdAt
+        updatedAt
         _version
         _deleted
         _lastChangedAt
-        createdAt
-        updatedAt
       }
+      createdAt
+      updatedAt
       _version
       _deleted
       _lastChangedAt
-      createdAt
-      updatedAt
     }
   }
 `;
@@ -139,17 +132,17 @@ export const updateCartProduct = /* GraphQL */ `
         ratings
         price
         oldPrice
+        createdAt
+        updatedAt
         _version
         _deleted
         _lastChangedAt
-        createdAt
-        updatedAt
       }
+      createdAt
+      updatedAt
       _version
       _deleted
       _lastChangedAt
-      createdAt
-      updatedAt
     }
   }
 `;
@@ -175,17 +168,17 @@ export const deleteCartProduct = /* GraphQL */ `
         ratings
         price
         oldPrice
+        createdAt
+        updatedAt
         _version
         _deleted
         _lastChangedAt
-        createdAt
-        updatedAt
       }
+      createdAt
+      updatedAt
       _version
       _deleted
       _lastChangedAt
-      createdAt
-      updatedAt
     }
   }
 `;
@@ -210,11 +203,11 @@ export const createOrderProduct = /* GraphQL */ `
         ratings
         price
         oldPrice
+        createdAt
+        updatedAt
         _version
         _deleted
         _lastChangedAt
-        createdAt
-        updatedAt
       }
       orderID
       order {
@@ -225,17 +218,17 @@ export const createOrderProduct = /* GraphQL */ `
         country
         city
         address
+        createdAt
+        updatedAt
         _version
         _deleted
         _lastChangedAt
-        createdAt
-        updatedAt
       }
+      createdAt
+      updatedAt
       _version
       _deleted
       _lastChangedAt
-      createdAt
-      updatedAt
     }
   }
 `;
@@ -260,11 +253,11 @@ export const updateOrderProduct = /* GraphQL */ `
         ratings
         price
         oldPrice
+        createdAt
+        updatedAt
         _version
         _deleted
         _lastChangedAt
-        createdAt
-        updatedAt
       }
       orderID
       order {
@@ -275,17 +268,17 @@ export const updateOrderProduct = /* GraphQL */ `
         country
         city
         address
+        createdAt
+        updatedAt
         _version
         _deleted
         _lastChangedAt
-        createdAt
-        updatedAt
       }
+      createdAt
+      updatedAt
       _version
       _deleted
       _lastChangedAt
-      createdAt
-      updatedAt
     }
   }
 `;
@@ -310,11 +303,11 @@ export const deleteOrderProduct = /* GraphQL */ `
         ratings
         price
         oldPrice
+        createdAt
+        updatedAt
         _version
         _deleted
         _lastChangedAt
-        createdAt
-        updatedAt
       }
       orderID
       order {
@@ -325,17 +318,17 @@ export const deleteOrderProduct = /* GraphQL */ `
         country
         city
         address
+        createdAt
+        updatedAt
         _version
         _deleted
         _lastChangedAt
-        createdAt
-        updatedAt
       }
+      createdAt
+      updatedAt
       _version
       _deleted
       _lastChangedAt
-      createdAt
-      updatedAt
     }
   }
 `;
@@ -352,11 +345,11 @@ export const createOrder = /* GraphQL */ `
       country
       city
       address
+      createdAt
+      updatedAt
       _version
       _deleted
       _lastChangedAt
-      createdAt
-      updatedAt
     }
   }
 `;
@@ -373,11 +366,11 @@ export const updateOrder = /* GraphQL */ `
       country
       city
       address
+      createdAt
+      updatedAt
       _version
       _deleted
       _lastChangedAt
-      createdAt
-      updatedAt
     }
   }
 `;
@@ -394,11 +387,11 @@ export const deleteOrder = /* GraphQL */ `
       country
       city
       address
+      createdAt
+      updatedAt
       _version
       _deleted
       _lastChangedAt
-      createdAt
-      updatedAt
     }
   }
 `;

@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "serviceConfiguration": {
+    "apiName": "flare",
+    "serviceName": "AppSync",
+    "gqlSchemaPath": "D:\\Users\\Kirtee\\FLARE\\flare\\amplify\\backend\\api\\flare\\schema.graphql",
+    "defaultAuthType": {
+      "mode": "API_KEY",
+      "expirationTime": 365,
+      "apiKeyExpirationDate": "2023-03-13T00:18:30.924Z",
+      "keyDescription": "API Key for FLARE"
+    },
+    "conflictResolution": {
+      "defaultResolutionStrategy": {
+        "type": "AUTOMERGE"
+      }
+    }
+  }
+}

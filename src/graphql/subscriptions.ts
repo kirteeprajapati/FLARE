@@ -15,11 +15,11 @@ export const onCreateProduct = /* GraphQL */ `
       ratings
       price
       oldPrice
+      createdAt
+      updatedAt
       _version
       _deleted
       _lastChangedAt
-      createdAt
-      updatedAt
     }
   }
 `;
@@ -36,11 +36,11 @@ export const onUpdateProduct = /* GraphQL */ `
       ratings
       price
       oldPrice
+      createdAt
+      updatedAt
       _version
       _deleted
       _lastChangedAt
-      createdAt
-      updatedAt
     }
   }
 `;
@@ -57,11 +57,11 @@ export const onDeleteProduct = /* GraphQL */ `
       ratings
       price
       oldPrice
+      createdAt
+      updatedAt
       _version
       _deleted
       _lastChangedAt
-      createdAt
-      updatedAt
     }
   }
 `;
@@ -84,17 +84,17 @@ export const onCreateCartProduct = /* GraphQL */ `
         ratings
         price
         oldPrice
+        createdAt
+        updatedAt
         _version
         _deleted
         _lastChangedAt
-        createdAt
-        updatedAt
       }
+      createdAt
+      updatedAt
       _version
       _deleted
       _lastChangedAt
-      createdAt
-      updatedAt
     }
   }
 `;
@@ -117,17 +117,17 @@ export const onUpdateCartProduct = /* GraphQL */ `
         ratings
         price
         oldPrice
+        createdAt
+        updatedAt
         _version
         _deleted
         _lastChangedAt
-        createdAt
-        updatedAt
       }
+      createdAt
+      updatedAt
       _version
       _deleted
       _lastChangedAt
-      createdAt
-      updatedAt
     }
   }
 `;
@@ -150,17 +150,17 @@ export const onDeleteCartProduct = /* GraphQL */ `
         ratings
         price
         oldPrice
+        createdAt
+        updatedAt
         _version
         _deleted
         _lastChangedAt
-        createdAt
-        updatedAt
       }
+      createdAt
+      updatedAt
       _version
       _deleted
       _lastChangedAt
-      createdAt
-      updatedAt
     }
   }
 `;
@@ -182,11 +182,11 @@ export const onCreateOrderProduct = /* GraphQL */ `
         ratings
         price
         oldPrice
+        createdAt
+        updatedAt
         _version
         _deleted
         _lastChangedAt
-        createdAt
-        updatedAt
       }
       orderID
       order {
@@ -197,17 +197,17 @@ export const onCreateOrderProduct = /* GraphQL */ `
         country
         city
         address
+        createdAt
+        updatedAt
         _version
         _deleted
         _lastChangedAt
-        createdAt
-        updatedAt
       }
+      createdAt
+      updatedAt
       _version
       _deleted
       _lastChangedAt
-      createdAt
-      updatedAt
     }
   }
 `;
@@ -229,11 +229,11 @@ export const onUpdateOrderProduct = /* GraphQL */ `
         ratings
         price
         oldPrice
+        createdAt
+        updatedAt
         _version
         _deleted
         _lastChangedAt
-        createdAt
-        updatedAt
       }
       orderID
       order {
@@ -244,17 +244,17 @@ export const onUpdateOrderProduct = /* GraphQL */ `
         country
         city
         address
+        createdAt
+        updatedAt
         _version
         _deleted
         _lastChangedAt
-        createdAt
-        updatedAt
       }
+      createdAt
+      updatedAt
       _version
       _deleted
       _lastChangedAt
-      createdAt
-      updatedAt
     }
   }
 `;
@@ -276,11 +276,11 @@ export const onDeleteOrderProduct = /* GraphQL */ `
         ratings
         price
         oldPrice
+        createdAt
+        updatedAt
         _version
         _deleted
         _lastChangedAt
-        createdAt
-        updatedAt
       }
       orderID
       order {
@@ -291,17 +291,17 @@ export const onDeleteOrderProduct = /* GraphQL */ `
         country
         city
         address
+        createdAt
+        updatedAt
         _version
         _deleted
         _lastChangedAt
-        createdAt
-        updatedAt
       }
+      createdAt
+      updatedAt
       _version
       _deleted
       _lastChangedAt
-      createdAt
-      updatedAt
     }
   }
 `;
@@ -315,11 +315,11 @@ export const onCreateOrder = /* GraphQL */ `
       country
       city
       address
+      createdAt
+      updatedAt
       _version
       _deleted
       _lastChangedAt
-      createdAt
-      updatedAt
     }
   }
 `;
@@ -333,11 +333,11 @@ export const onUpdateOrder = /* GraphQL */ `
       country
       city
       address
+      createdAt
+      updatedAt
       _version
       _deleted
       _lastChangedAt
-      createdAt
-      updatedAt
     }
   }
 `;
@@ -351,11 +351,11 @@ export const onDeleteOrder = /* GraphQL */ `
       country
       city
       address
+      createdAt
+      updatedAt
       _version
       _deleted
       _lastChangedAt
-      createdAt
-      updatedAt
     }
   }
 `;

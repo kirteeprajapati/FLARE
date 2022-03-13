@@ -2,11 +2,6 @@
 /* eslint-disable */
 //  This file was automatically generated and should not be edited.
 
-export type PaymentIntent = {
-  __typename: "PaymentIntent",
-  clientSecret?: string,
-};
-
 export type CreateProductInput = {
   id?: string | null,
   title: string,
@@ -102,21 +97,21 @@ export type ModelIntInput = {
 
 export type Product = {
   __typename: "Product",
-  id?: string,
-  title?: string,
+  id: string,
+  title: string,
   description?: string | null,
-  image?: string,
-  images?: Array< string >,
+  image: string,
+  images: Array< string >,
   options?: Array< string > | null,
   avgRating?: number | null,
   ratings?: number | null,
-  price?: number,
+  price: number,
   oldPrice?: number | null,
-  _version?: number,
+  createdAt: string,
+  updatedAt: string,
+  _version: number,
   _deleted?: boolean | null,
-  _lastChangedAt?: number,
-  createdAt?: string,
-  updatedAt?: string,
+  _lastChangedAt: number,
 };
 
 export type UpdateProductInput = {
@@ -134,7 +129,7 @@ export type UpdateProductInput = {
 };
 
 export type DeleteProductInput = {
-  id?: string | null,
+  id: string,
   _version?: number | null,
 };
 
@@ -175,17 +170,17 @@ export type ModelIDInput = {
 
 export type CartProduct = {
   __typename: "CartProduct",
-  id?: string,
-  userSub?: string,
-  quantity?: number,
+  id: string,
+  userSub: string,
+  quantity: number,
   option?: string | null,
-  productID?: string,
-  product?: Product,
-  _version?: number,
+  productID: string,
+  product?: Product | null,
+  createdAt: string,
+  updatedAt: string,
+  _version: number,
   _deleted?: boolean | null,
-  _lastChangedAt?: number,
-  createdAt?: string,
-  updatedAt?: string,
+  _lastChangedAt: number,
 };
 
 export type UpdateCartProductInput = {
@@ -198,7 +193,7 @@ export type UpdateCartProductInput = {
 };
 
 export type DeleteCartProductInput = {
-  id?: string | null,
+  id: string,
   _version?: number | null,
 };
 
@@ -223,34 +218,34 @@ export type ModelOrderProductConditionInput = {
 
 export type OrderProduct = {
   __typename: "OrderProduct",
-  id?: string,
-  quantity?: number,
+  id: string,
+  quantity: number,
   option?: string | null,
-  productID?: string,
-  product?: Product,
-  orderID?: string,
-  order?: Order,
-  _version?: number,
+  productID: string,
+  product?: Product | null,
+  orderID: string,
+  order?: Order | null,
+  createdAt: string,
+  updatedAt: string,
+  _version: number,
   _deleted?: boolean | null,
-  _lastChangedAt?: number,
-  createdAt?: string,
-  updatedAt?: string,
+  _lastChangedAt: number,
 };
 
 export type Order = {
   __typename: "Order",
-  id?: string,
-  userSub?: string,
-  fullName?: string,
+  id: string,
+  userSub: string,
+  fullName: string,
   phoneNumber?: string | null,
   country?: string | null,
   city?: string | null,
   address?: string | null,
-  _version?: number,
+  createdAt: string,
+  updatedAt: string,
+  _version: number,
   _deleted?: boolean | null,
-  _lastChangedAt?: number,
-  createdAt?: string,
-  updatedAt?: string,
+  _lastChangedAt: number,
 };
 
 export type UpdateOrderProductInput = {
@@ -263,7 +258,7 @@ export type UpdateOrderProductInput = {
 };
 
 export type DeleteOrderProductInput = {
-  id?: string | null,
+  id: string,
   _version?: number | null,
 };
 
@@ -302,7 +297,7 @@ export type UpdateOrderInput = {
 };
 
 export type DeleteOrderInput = {
-  id?: string | null,
+  id: string,
   _version?: number | null,
 };
 
@@ -324,7 +319,7 @@ export type ModelProductFilterInput = {
 
 export type ModelProductConnection = {
   __typename: "ModelProductConnection",
-  items?:  Array<Product | null > | null,
+  items:  Array<Product | null >,
   nextToken?: string | null,
   startedAt?: number | null,
 };
@@ -342,7 +337,7 @@ export type ModelCartProductFilterInput = {
 
 export type ModelCartProductConnection = {
   __typename: "ModelCartProductConnection",
-  items?:  Array<CartProduct | null > | null,
+  items:  Array<CartProduct | null >,
   nextToken?: string | null,
   startedAt?: number | null,
 };
@@ -360,7 +355,7 @@ export type ModelOrderProductFilterInput = {
 
 export type ModelOrderProductConnection = {
   __typename: "ModelOrderProductConnection",
-  items?:  Array<OrderProduct | null > | null,
+  items:  Array<OrderProduct | null >,
   nextToken?: string | null,
   startedAt?: number | null,
 };
@@ -380,24 +375,13 @@ export type ModelOrderFilterInput = {
 
 export type ModelOrderConnection = {
   __typename: "ModelOrderConnection",
-  items?:  Array<Order | null > | null,
+  items:  Array<Order | null >,
   nextToken?: string | null,
   startedAt?: number | null,
 };
 
-export type CreatePaymentIntentMutationVariables = {
-  amount?: number,
-};
-
-export type CreatePaymentIntentMutation = {
-  createPaymentIntent:  {
-    __typename: "PaymentIntent",
-    clientSecret: string,
-  },
-};
-
 export type CreateProductMutationVariables = {
-  input?: CreateProductInput,
+  input: CreateProductInput,
   condition?: ModelProductConditionInput | null,
 };
 
@@ -414,16 +398,16 @@ export type CreateProductMutation = {
     ratings?: number | null,
     price: number,
     oldPrice?: number | null,
+    createdAt: string,
+    updatedAt: string,
     _version: number,
     _deleted?: boolean | null,
     _lastChangedAt: number,
-    createdAt: string,
-    updatedAt: string,
   } | null,
 };
 
 export type UpdateProductMutationVariables = {
-  input?: UpdateProductInput,
+  input: UpdateProductInput,
   condition?: ModelProductConditionInput | null,
 };
 
@@ -440,16 +424,16 @@ export type UpdateProductMutation = {
     ratings?: number | null,
     price: number,
     oldPrice?: number | null,
+    createdAt: string,
+    updatedAt: string,
     _version: number,
     _deleted?: boolean | null,
     _lastChangedAt: number,
-    createdAt: string,
-    updatedAt: string,
   } | null,
 };
 
 export type DeleteProductMutationVariables = {
-  input?: DeleteProductInput,
+  input: DeleteProductInput,
   condition?: ModelProductConditionInput | null,
 };
 
@@ -466,16 +450,16 @@ export type DeleteProductMutation = {
     ratings?: number | null,
     price: number,
     oldPrice?: number | null,
+    createdAt: string,
+    updatedAt: string,
     _version: number,
     _deleted?: boolean | null,
     _lastChangedAt: number,
-    createdAt: string,
-    updatedAt: string,
   } | null,
 };
 
 export type CreateCartProductMutationVariables = {
-  input?: CreateCartProductInput,
+  input: CreateCartProductInput,
   condition?: ModelCartProductConditionInput | null,
 };
 
@@ -499,22 +483,22 @@ export type CreateCartProductMutation = {
       ratings?: number | null,
       price: number,
       oldPrice?: number | null,
+      createdAt: string,
+      updatedAt: string,
       _version: number,
       _deleted?: boolean | null,
       _lastChangedAt: number,
-      createdAt: string,
-      updatedAt: string,
     } | null,
+    createdAt: string,
+    updatedAt: string,
     _version: number,
     _deleted?: boolean | null,
     _lastChangedAt: number,
-    createdAt: string,
-    updatedAt: string,
   } | null,
 };
 
 export type UpdateCartProductMutationVariables = {
-  input?: UpdateCartProductInput,
+  input: UpdateCartProductInput,
   condition?: ModelCartProductConditionInput | null,
 };
 
@@ -538,22 +522,22 @@ export type UpdateCartProductMutation = {
       ratings?: number | null,
       price: number,
       oldPrice?: number | null,
+      createdAt: string,
+      updatedAt: string,
       _version: number,
       _deleted?: boolean | null,
       _lastChangedAt: number,
-      createdAt: string,
-      updatedAt: string,
     } | null,
+    createdAt: string,
+    updatedAt: string,
     _version: number,
     _deleted?: boolean | null,
     _lastChangedAt: number,
-    createdAt: string,
-    updatedAt: string,
   } | null,
 };
 
 export type DeleteCartProductMutationVariables = {
-  input?: DeleteCartProductInput,
+  input: DeleteCartProductInput,
   condition?: ModelCartProductConditionInput | null,
 };
 
@@ -577,22 +561,22 @@ export type DeleteCartProductMutation = {
       ratings?: number | null,
       price: number,
       oldPrice?: number | null,
+      createdAt: string,
+      updatedAt: string,
       _version: number,
       _deleted?: boolean | null,
       _lastChangedAt: number,
-      createdAt: string,
-      updatedAt: string,
     } | null,
+    createdAt: string,
+    updatedAt: string,
     _version: number,
     _deleted?: boolean | null,
     _lastChangedAt: number,
-    createdAt: string,
-    updatedAt: string,
   } | null,
 };
 
 export type CreateOrderProductMutationVariables = {
-  input?: CreateOrderProductInput,
+  input: CreateOrderProductInput,
   condition?: ModelOrderProductConditionInput | null,
 };
 
@@ -615,11 +599,11 @@ export type CreateOrderProductMutation = {
       ratings?: number | null,
       price: number,
       oldPrice?: number | null,
+      createdAt: string,
+      updatedAt: string,
       _version: number,
       _deleted?: boolean | null,
       _lastChangedAt: number,
-      createdAt: string,
-      updatedAt: string,
     } | null,
     orderID: string,
     order?:  {
@@ -631,22 +615,22 @@ export type CreateOrderProductMutation = {
       country?: string | null,
       city?: string | null,
       address?: string | null,
+      createdAt: string,
+      updatedAt: string,
       _version: number,
       _deleted?: boolean | null,
       _lastChangedAt: number,
-      createdAt: string,
-      updatedAt: string,
     } | null,
+    createdAt: string,
+    updatedAt: string,
     _version: number,
     _deleted?: boolean | null,
     _lastChangedAt: number,
-    createdAt: string,
-    updatedAt: string,
   } | null,
 };
 
 export type UpdateOrderProductMutationVariables = {
-  input?: UpdateOrderProductInput,
+  input: UpdateOrderProductInput,
   condition?: ModelOrderProductConditionInput | null,
 };
 
@@ -669,11 +653,11 @@ export type UpdateOrderProductMutation = {
       ratings?: number | null,
       price: number,
       oldPrice?: number | null,
+      createdAt: string,
+      updatedAt: string,
       _version: number,
       _deleted?: boolean | null,
       _lastChangedAt: number,
-      createdAt: string,
-      updatedAt: string,
     } | null,
     orderID: string,
     order?:  {
@@ -685,22 +669,22 @@ export type UpdateOrderProductMutation = {
       country?: string | null,
       city?: string | null,
       address?: string | null,
+      createdAt: string,
+      updatedAt: string,
       _version: number,
       _deleted?: boolean | null,
       _lastChangedAt: number,
-      createdAt: string,
-      updatedAt: string,
     } | null,
+    createdAt: string,
+    updatedAt: string,
     _version: number,
     _deleted?: boolean | null,
     _lastChangedAt: number,
-    createdAt: string,
-    updatedAt: string,
   } | null,
 };
 
 export type DeleteOrderProductMutationVariables = {
-  input?: DeleteOrderProductInput,
+  input: DeleteOrderProductInput,
   condition?: ModelOrderProductConditionInput | null,
 };
 
@@ -723,11 +707,11 @@ export type DeleteOrderProductMutation = {
       ratings?: number | null,
       price: number,
       oldPrice?: number | null,
+      createdAt: string,
+      updatedAt: string,
       _version: number,
       _deleted?: boolean | null,
       _lastChangedAt: number,
-      createdAt: string,
-      updatedAt: string,
     } | null,
     orderID: string,
     order?:  {
@@ -739,22 +723,22 @@ export type DeleteOrderProductMutation = {
       country?: string | null,
       city?: string | null,
       address?: string | null,
+      createdAt: string,
+      updatedAt: string,
       _version: number,
       _deleted?: boolean | null,
       _lastChangedAt: number,
-      createdAt: string,
-      updatedAt: string,
     } | null,
+    createdAt: string,
+    updatedAt: string,
     _version: number,
     _deleted?: boolean | null,
     _lastChangedAt: number,
-    createdAt: string,
-    updatedAt: string,
   } | null,
 };
 
 export type CreateOrderMutationVariables = {
-  input?: CreateOrderInput,
+  input: CreateOrderInput,
   condition?: ModelOrderConditionInput | null,
 };
 
@@ -768,16 +752,16 @@ export type CreateOrderMutation = {
     country?: string | null,
     city?: string | null,
     address?: string | null,
+    createdAt: string,
+    updatedAt: string,
     _version: number,
     _deleted?: boolean | null,
     _lastChangedAt: number,
-    createdAt: string,
-    updatedAt: string,
   } | null,
 };
 
 export type UpdateOrderMutationVariables = {
-  input?: UpdateOrderInput,
+  input: UpdateOrderInput,
   condition?: ModelOrderConditionInput | null,
 };
 
@@ -791,16 +775,16 @@ export type UpdateOrderMutation = {
     country?: string | null,
     city?: string | null,
     address?: string | null,
+    createdAt: string,
+    updatedAt: string,
     _version: number,
     _deleted?: boolean | null,
     _lastChangedAt: number,
-    createdAt: string,
-    updatedAt: string,
   } | null,
 };
 
 export type DeleteOrderMutationVariables = {
-  input?: DeleteOrderInput,
+  input: DeleteOrderInput,
   condition?: ModelOrderConditionInput | null,
 };
 
@@ -814,49 +798,16 @@ export type DeleteOrderMutation = {
     country?: string | null,
     city?: string | null,
     address?: string | null,
+    createdAt: string,
+    updatedAt: string,
     _version: number,
     _deleted?: boolean | null,
     _lastChangedAt: number,
-    createdAt: string,
-    updatedAt: string,
-  } | null,
-};
-
-export type SyncProductsQueryVariables = {
-  filter?: ModelProductFilterInput | null,
-  limit?: number | null,
-  nextToken?: string | null,
-  lastSync?: number | null,
-};
-
-export type SyncProductsQuery = {
-  syncProducts?:  {
-    __typename: "ModelProductConnection",
-    items?:  Array< {
-      __typename: "Product",
-      id: string,
-      title: string,
-      description?: string | null,
-      image: string,
-      images: Array< string >,
-      options?: Array< string > | null,
-      avgRating?: number | null,
-      ratings?: number | null,
-      price: number,
-      oldPrice?: number | null,
-      _version: number,
-      _deleted?: boolean | null,
-      _lastChangedAt: number,
-      createdAt: string,
-      updatedAt: string,
-    } | null > | null,
-    nextToken?: string | null,
-    startedAt?: number | null,
   } | null,
 };
 
 export type GetProductQueryVariables = {
-  id?: string,
+  id: string,
 };
 
 export type GetProductQuery = {
@@ -872,11 +823,11 @@ export type GetProductQuery = {
     ratings?: number | null,
     price: number,
     oldPrice?: number | null,
+    createdAt: string,
+    updatedAt: string,
     _version: number,
     _deleted?: boolean | null,
     _lastChangedAt: number,
-    createdAt: string,
-    updatedAt: string,
   } | null,
 };
 
@@ -889,7 +840,7 @@ export type ListProductsQueryVariables = {
 export type ListProductsQuery = {
   listProducts?:  {
     __typename: "ModelProductConnection",
-    items?:  Array< {
+    items:  Array< {
       __typename: "Product",
       id: string,
       title: string,
@@ -901,65 +852,52 @@ export type ListProductsQuery = {
       ratings?: number | null,
       price: number,
       oldPrice?: number | null,
+      createdAt: string,
+      updatedAt: string,
       _version: number,
       _deleted?: boolean | null,
       _lastChangedAt: number,
-      createdAt: string,
-      updatedAt: string,
-    } | null > | null,
+    } | null >,
     nextToken?: string | null,
     startedAt?: number | null,
   } | null,
 };
 
-export type SyncCartProductsQueryVariables = {
-  filter?: ModelCartProductFilterInput | null,
+export type SyncProductsQueryVariables = {
+  filter?: ModelProductFilterInput | null,
   limit?: number | null,
   nextToken?: string | null,
   lastSync?: number | null,
 };
 
-export type SyncCartProductsQuery = {
-  syncCartProducts?:  {
-    __typename: "ModelCartProductConnection",
-    items?:  Array< {
-      __typename: "CartProduct",
+export type SyncProductsQuery = {
+  syncProducts?:  {
+    __typename: "ModelProductConnection",
+    items:  Array< {
+      __typename: "Product",
       id: string,
-      userSub: string,
-      quantity: number,
-      option?: string | null,
-      productID: string,
-      product?:  {
-        __typename: "Product",
-        id: string,
-        title: string,
-        description?: string | null,
-        image: string,
-        images: Array< string >,
-        options?: Array< string > | null,
-        avgRating?: number | null,
-        ratings?: number | null,
-        price: number,
-        oldPrice?: number | null,
-        _version: number,
-        _deleted?: boolean | null,
-        _lastChangedAt: number,
-        createdAt: string,
-        updatedAt: string,
-      } | null,
+      title: string,
+      description?: string | null,
+      image: string,
+      images: Array< string >,
+      options?: Array< string > | null,
+      avgRating?: number | null,
+      ratings?: number | null,
+      price: number,
+      oldPrice?: number | null,
+      createdAt: string,
+      updatedAt: string,
       _version: number,
       _deleted?: boolean | null,
       _lastChangedAt: number,
-      createdAt: string,
-      updatedAt: string,
-    } | null > | null,
+    } | null >,
     nextToken?: string | null,
     startedAt?: number | null,
   } | null,
 };
 
 export type GetCartProductQueryVariables = {
-  id?: string,
+  id: string,
 };
 
 export type GetCartProductQuery = {
@@ -982,17 +920,17 @@ export type GetCartProductQuery = {
       ratings?: number | null,
       price: number,
       oldPrice?: number | null,
+      createdAt: string,
+      updatedAt: string,
       _version: number,
       _deleted?: boolean | null,
       _lastChangedAt: number,
-      createdAt: string,
-      updatedAt: string,
     } | null,
+    createdAt: string,
+    updatedAt: string,
     _version: number,
     _deleted?: boolean | null,
     _lastChangedAt: number,
-    createdAt: string,
-    updatedAt: string,
   } | null,
 };
 
@@ -1005,7 +943,7 @@ export type ListCartProductsQueryVariables = {
 export type ListCartProductsQuery = {
   listCartProducts?:  {
     __typename: "ModelCartProductConnection",
-    items?:  Array< {
+    items:  Array< {
       __typename: "CartProduct",
       id: string,
       userSub: string,
@@ -1024,36 +962,37 @@ export type ListCartProductsQuery = {
         ratings?: number | null,
         price: number,
         oldPrice?: number | null,
+        createdAt: string,
+        updatedAt: string,
         _version: number,
         _deleted?: boolean | null,
         _lastChangedAt: number,
-        createdAt: string,
-        updatedAt: string,
       } | null,
+      createdAt: string,
+      updatedAt: string,
       _version: number,
       _deleted?: boolean | null,
       _lastChangedAt: number,
-      createdAt: string,
-      updatedAt: string,
-    } | null > | null,
+    } | null >,
     nextToken?: string | null,
     startedAt?: number | null,
   } | null,
 };
 
-export type SyncOrderProductsQueryVariables = {
-  filter?: ModelOrderProductFilterInput | null,
+export type SyncCartProductsQueryVariables = {
+  filter?: ModelCartProductFilterInput | null,
   limit?: number | null,
   nextToken?: string | null,
   lastSync?: number | null,
 };
 
-export type SyncOrderProductsQuery = {
-  syncOrderProducts?:  {
-    __typename: "ModelOrderProductConnection",
-    items?:  Array< {
-      __typename: "OrderProduct",
+export type SyncCartProductsQuery = {
+  syncCartProducts?:  {
+    __typename: "ModelCartProductConnection",
+    items:  Array< {
+      __typename: "CartProduct",
       id: string,
+      userSub: string,
       quantity: number,
       option?: string | null,
       productID: string,
@@ -1069,41 +1008,25 @@ export type SyncOrderProductsQuery = {
         ratings?: number | null,
         price: number,
         oldPrice?: number | null,
+        createdAt: string,
+        updatedAt: string,
         _version: number,
         _deleted?: boolean | null,
         _lastChangedAt: number,
-        createdAt: string,
-        updatedAt: string,
       } | null,
-      orderID: string,
-      order?:  {
-        __typename: "Order",
-        id: string,
-        userSub: string,
-        fullName: string,
-        phoneNumber?: string | null,
-        country?: string | null,
-        city?: string | null,
-        address?: string | null,
-        _version: number,
-        _deleted?: boolean | null,
-        _lastChangedAt: number,
-        createdAt: string,
-        updatedAt: string,
-      } | null,
+      createdAt: string,
+      updatedAt: string,
       _version: number,
       _deleted?: boolean | null,
       _lastChangedAt: number,
-      createdAt: string,
-      updatedAt: string,
-    } | null > | null,
+    } | null >,
     nextToken?: string | null,
     startedAt?: number | null,
   } | null,
 };
 
 export type GetOrderProductQueryVariables = {
-  id?: string,
+  id: string,
 };
 
 export type GetOrderProductQuery = {
@@ -1125,11 +1048,11 @@ export type GetOrderProductQuery = {
       ratings?: number | null,
       price: number,
       oldPrice?: number | null,
+      createdAt: string,
+      updatedAt: string,
       _version: number,
       _deleted?: boolean | null,
       _lastChangedAt: number,
-      createdAt: string,
-      updatedAt: string,
     } | null,
     orderID: string,
     order?:  {
@@ -1141,17 +1064,17 @@ export type GetOrderProductQuery = {
       country?: string | null,
       city?: string | null,
       address?: string | null,
+      createdAt: string,
+      updatedAt: string,
       _version: number,
       _deleted?: boolean | null,
       _lastChangedAt: number,
-      createdAt: string,
-      updatedAt: string,
     } | null,
+    createdAt: string,
+    updatedAt: string,
     _version: number,
     _deleted?: boolean | null,
     _lastChangedAt: number,
-    createdAt: string,
-    updatedAt: string,
   } | null,
 };
 
@@ -1164,7 +1087,7 @@ export type ListOrderProductsQueryVariables = {
 export type ListOrderProductsQuery = {
   listOrderProducts?:  {
     __typename: "ModelOrderProductConnection",
-    items?:  Array< {
+    items:  Array< {
       __typename: "OrderProduct",
       id: string,
       quantity: number,
@@ -1182,11 +1105,11 @@ export type ListOrderProductsQuery = {
         ratings?: number | null,
         price: number,
         oldPrice?: number | null,
+        createdAt: string,
+        updatedAt: string,
         _version: number,
         _deleted?: boolean | null,
         _lastChangedAt: number,
-        createdAt: string,
-        updatedAt: string,
       } | null,
       orderID: string,
       order?:  {
@@ -1198,18 +1121,130 @@ export type ListOrderProductsQuery = {
         country?: string | null,
         city?: string | null,
         address?: string | null,
+        createdAt: string,
+        updatedAt: string,
         _version: number,
         _deleted?: boolean | null,
         _lastChangedAt: number,
-        createdAt: string,
-        updatedAt: string,
       } | null,
+      createdAt: string,
+      updatedAt: string,
       _version: number,
       _deleted?: boolean | null,
       _lastChangedAt: number,
+    } | null >,
+    nextToken?: string | null,
+    startedAt?: number | null,
+  } | null,
+};
+
+export type SyncOrderProductsQueryVariables = {
+  filter?: ModelOrderProductFilterInput | null,
+  limit?: number | null,
+  nextToken?: string | null,
+  lastSync?: number | null,
+};
+
+export type SyncOrderProductsQuery = {
+  syncOrderProducts?:  {
+    __typename: "ModelOrderProductConnection",
+    items:  Array< {
+      __typename: "OrderProduct",
+      id: string,
+      quantity: number,
+      option?: string | null,
+      productID: string,
+      product?:  {
+        __typename: "Product",
+        id: string,
+        title: string,
+        description?: string | null,
+        image: string,
+        images: Array< string >,
+        options?: Array< string > | null,
+        avgRating?: number | null,
+        ratings?: number | null,
+        price: number,
+        oldPrice?: number | null,
+        createdAt: string,
+        updatedAt: string,
+        _version: number,
+        _deleted?: boolean | null,
+        _lastChangedAt: number,
+      } | null,
+      orderID: string,
+      order?:  {
+        __typename: "Order",
+        id: string,
+        userSub: string,
+        fullName: string,
+        phoneNumber?: string | null,
+        country?: string | null,
+        city?: string | null,
+        address?: string | null,
+        createdAt: string,
+        updatedAt: string,
+        _version: number,
+        _deleted?: boolean | null,
+        _lastChangedAt: number,
+      } | null,
       createdAt: string,
       updatedAt: string,
-    } | null > | null,
+      _version: number,
+      _deleted?: boolean | null,
+      _lastChangedAt: number,
+    } | null >,
+    nextToken?: string | null,
+    startedAt?: number | null,
+  } | null,
+};
+
+export type GetOrderQueryVariables = {
+  id: string,
+};
+
+export type GetOrderQuery = {
+  getOrder?:  {
+    __typename: "Order",
+    id: string,
+    userSub: string,
+    fullName: string,
+    phoneNumber?: string | null,
+    country?: string | null,
+    city?: string | null,
+    address?: string | null,
+    createdAt: string,
+    updatedAt: string,
+    _version: number,
+    _deleted?: boolean | null,
+    _lastChangedAt: number,
+  } | null,
+};
+
+export type ListOrdersQueryVariables = {
+  filter?: ModelOrderFilterInput | null,
+  limit?: number | null,
+  nextToken?: string | null,
+};
+
+export type ListOrdersQuery = {
+  listOrders?:  {
+    __typename: "ModelOrderConnection",
+    items:  Array< {
+      __typename: "Order",
+      id: string,
+      userSub: string,
+      fullName: string,
+      phoneNumber?: string | null,
+      country?: string | null,
+      city?: string | null,
+      address?: string | null,
+      createdAt: string,
+      updatedAt: string,
+      _version: number,
+      _deleted?: boolean | null,
+      _lastChangedAt: number,
+    } | null >,
     nextToken?: string | null,
     startedAt?: number | null,
   } | null,
@@ -1225,7 +1260,7 @@ export type SyncOrdersQueryVariables = {
 export type SyncOrdersQuery = {
   syncOrders?:  {
     __typename: "ModelOrderConnection",
-    items?:  Array< {
+    items:  Array< {
       __typename: "Order",
       id: string,
       userSub: string,
@@ -1234,63 +1269,12 @@ export type SyncOrdersQuery = {
       country?: string | null,
       city?: string | null,
       address?: string | null,
+      createdAt: string,
+      updatedAt: string,
       _version: number,
       _deleted?: boolean | null,
       _lastChangedAt: number,
-      createdAt: string,
-      updatedAt: string,
-    } | null > | null,
-    nextToken?: string | null,
-    startedAt?: number | null,
-  } | null,
-};
-
-export type GetOrderQueryVariables = {
-  id?: string,
-};
-
-export type GetOrderQuery = {
-  getOrder?:  {
-    __typename: "Order",
-    id: string,
-    userSub: string,
-    fullName: string,
-    phoneNumber?: string | null,
-    country?: string | null,
-    city?: string | null,
-    address?: string | null,
-    _version: number,
-    _deleted?: boolean | null,
-    _lastChangedAt: number,
-    createdAt: string,
-    updatedAt: string,
-  } | null,
-};
-
-export type ListOrdersQueryVariables = {
-  filter?: ModelOrderFilterInput | null,
-  limit?: number | null,
-  nextToken?: string | null,
-};
-
-export type ListOrdersQuery = {
-  listOrders?:  {
-    __typename: "ModelOrderConnection",
-    items?:  Array< {
-      __typename: "Order",
-      id: string,
-      userSub: string,
-      fullName: string,
-      phoneNumber?: string | null,
-      country?: string | null,
-      city?: string | null,
-      address?: string | null,
-      _version: number,
-      _deleted?: boolean | null,
-      _lastChangedAt: number,
-      createdAt: string,
-      updatedAt: string,
-    } | null > | null,
+    } | null >,
     nextToken?: string | null,
     startedAt?: number | null,
   } | null,
@@ -1309,11 +1293,11 @@ export type OnCreateProductSubscription = {
     ratings?: number | null,
     price: number,
     oldPrice?: number | null,
+    createdAt: string,
+    updatedAt: string,
     _version: number,
     _deleted?: boolean | null,
     _lastChangedAt: number,
-    createdAt: string,
-    updatedAt: string,
   } | null,
 };
 
@@ -1330,11 +1314,11 @@ export type OnUpdateProductSubscription = {
     ratings?: number | null,
     price: number,
     oldPrice?: number | null,
+    createdAt: string,
+    updatedAt: string,
     _version: number,
     _deleted?: boolean | null,
     _lastChangedAt: number,
-    createdAt: string,
-    updatedAt: string,
   } | null,
 };
 
@@ -1351,11 +1335,11 @@ export type OnDeleteProductSubscription = {
     ratings?: number | null,
     price: number,
     oldPrice?: number | null,
+    createdAt: string,
+    updatedAt: string,
     _version: number,
     _deleted?: boolean | null,
     _lastChangedAt: number,
-    createdAt: string,
-    updatedAt: string,
   } | null,
 };
 
@@ -1379,17 +1363,17 @@ export type OnCreateCartProductSubscription = {
       ratings?: number | null,
       price: number,
       oldPrice?: number | null,
+      createdAt: string,
+      updatedAt: string,
       _version: number,
       _deleted?: boolean | null,
       _lastChangedAt: number,
-      createdAt: string,
-      updatedAt: string,
     } | null,
+    createdAt: string,
+    updatedAt: string,
     _version: number,
     _deleted?: boolean | null,
     _lastChangedAt: number,
-    createdAt: string,
-    updatedAt: string,
   } | null,
 };
 
@@ -1413,17 +1397,17 @@ export type OnUpdateCartProductSubscription = {
       ratings?: number | null,
       price: number,
       oldPrice?: number | null,
+      createdAt: string,
+      updatedAt: string,
       _version: number,
       _deleted?: boolean | null,
       _lastChangedAt: number,
-      createdAt: string,
-      updatedAt: string,
     } | null,
+    createdAt: string,
+    updatedAt: string,
     _version: number,
     _deleted?: boolean | null,
     _lastChangedAt: number,
-    createdAt: string,
-    updatedAt: string,
   } | null,
 };
 
@@ -1447,17 +1431,17 @@ export type OnDeleteCartProductSubscription = {
       ratings?: number | null,
       price: number,
       oldPrice?: number | null,
+      createdAt: string,
+      updatedAt: string,
       _version: number,
       _deleted?: boolean | null,
       _lastChangedAt: number,
-      createdAt: string,
-      updatedAt: string,
     } | null,
+    createdAt: string,
+    updatedAt: string,
     _version: number,
     _deleted?: boolean | null,
     _lastChangedAt: number,
-    createdAt: string,
-    updatedAt: string,
   } | null,
 };
 
@@ -1480,11 +1464,11 @@ export type OnCreateOrderProductSubscription = {
       ratings?: number | null,
       price: number,
       oldPrice?: number | null,
+      createdAt: string,
+      updatedAt: string,
       _version: number,
       _deleted?: boolean | null,
       _lastChangedAt: number,
-      createdAt: string,
-      updatedAt: string,
     } | null,
     orderID: string,
     order?:  {
@@ -1496,17 +1480,17 @@ export type OnCreateOrderProductSubscription = {
       country?: string | null,
       city?: string | null,
       address?: string | null,
+      createdAt: string,
+      updatedAt: string,
       _version: number,
       _deleted?: boolean | null,
       _lastChangedAt: number,
-      createdAt: string,
-      updatedAt: string,
     } | null,
+    createdAt: string,
+    updatedAt: string,
     _version: number,
     _deleted?: boolean | null,
     _lastChangedAt: number,
-    createdAt: string,
-    updatedAt: string,
   } | null,
 };
 
@@ -1529,11 +1513,11 @@ export type OnUpdateOrderProductSubscription = {
       ratings?: number | null,
       price: number,
       oldPrice?: number | null,
+      createdAt: string,
+      updatedAt: string,
       _version: number,
       _deleted?: boolean | null,
       _lastChangedAt: number,
-      createdAt: string,
-      updatedAt: string,
     } | null,
     orderID: string,
     order?:  {
@@ -1545,17 +1529,17 @@ export type OnUpdateOrderProductSubscription = {
       country?: string | null,
       city?: string | null,
       address?: string | null,
+      createdAt: string,
+      updatedAt: string,
       _version: number,
       _deleted?: boolean | null,
       _lastChangedAt: number,
-      createdAt: string,
-      updatedAt: string,
     } | null,
+    createdAt: string,
+    updatedAt: string,
     _version: number,
     _deleted?: boolean | null,
     _lastChangedAt: number,
-    createdAt: string,
-    updatedAt: string,
   } | null,
 };
 
@@ -1578,11 +1562,11 @@ export type OnDeleteOrderProductSubscription = {
       ratings?: number | null,
       price: number,
       oldPrice?: number | null,
+      createdAt: string,
+      updatedAt: string,
       _version: number,
       _deleted?: boolean | null,
       _lastChangedAt: number,
-      createdAt: string,
-      updatedAt: string,
     } | null,
     orderID: string,
     order?:  {
@@ -1594,17 +1578,17 @@ export type OnDeleteOrderProductSubscription = {
       country?: string | null,
       city?: string | null,
       address?: string | null,
+      createdAt: string,
+      updatedAt: string,
       _version: number,
       _deleted?: boolean | null,
       _lastChangedAt: number,
-      createdAt: string,
-      updatedAt: string,
     } | null,
+    createdAt: string,
+    updatedAt: string,
     _version: number,
     _deleted?: boolean | null,
     _lastChangedAt: number,
-    createdAt: string,
-    updatedAt: string,
   } | null,
 };
 
@@ -1618,11 +1602,11 @@ export type OnCreateOrderSubscription = {
     country?: string | null,
     city?: string | null,
     address?: string | null,
+    createdAt: string,
+    updatedAt: string,
     _version: number,
     _deleted?: boolean | null,
     _lastChangedAt: number,
-    createdAt: string,
-    updatedAt: string,
   } | null,
 };
 
@@ -1636,11 +1620,11 @@ export type OnUpdateOrderSubscription = {
     country?: string | null,
     city?: string | null,
     address?: string | null,
+    createdAt: string,
+    updatedAt: string,
     _version: number,
     _deleted?: boolean | null,
     _lastChangedAt: number,
-    createdAt: string,
-    updatedAt: string,
   } | null,
 };
 
@@ -1654,10 +1638,10 @@ export type OnDeleteOrderSubscription = {
     country?: string | null,
     city?: string | null,
     address?: string | null,
+    createdAt: string,
+    updatedAt: string,
     _version: number,
     _deleted?: boolean | null,
     _lastChangedAt: number,
-    createdAt: string,
-    updatedAt: string,
   } | null,
 };

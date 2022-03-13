@@ -2,23 +2,23 @@
 
 ## Product Images
 
-- https://notjustdev-dummy.s3.us-east-2.amazonaws.com/images/products/cleanarchitecture.jpg
+- https://m.media-amazon.com/images/I/71raTffvoRL._AC_UL480_FMwebp_QL65_.jpg
 
-- https://notjustdev-dummy.s3.us-east-2.amazonaws.com/images/products/cleancode.jpg
+- https://m.media-amazon.com/images/I/71raTffvoRL._AC_UL480_FMwebp_QL65_.jpg
 
-- https://notjustdev-dummy.s3.us-east-2.amazonaws.com/images/products/imac1.jpg
+- https://m.media-amazon.com/images/I/41aaJolcLZL._AC_UL480_FMwebp_QL65_.jpg
 
-- https://notjustdev-dummy.s3.us-east-2.amazonaws.com/images/products/imac2.jpg
+- https://m.media-amazon.com/images/I/71f7TY4NH9S._AC_UL480_FMwebp_QL65_.jpg
 
-- https://notjustdev-dummy.s3.us-east-2.amazonaws.com/images/products/keyboard1.jpg
+- https://m.media-amazon.com/images/I/61FOldEmviL._AC_UL480_FMwebp_QL65_.jpg
 
-- https://notjustdev-dummy.s3.us-east-2.amazonaws.com/images/products/keyboard2.jpg
+- https://m.media-amazon.com/images/I/719wpVqXagL._AC_UL480_FMwebp_QL65_.jpg
 
-- https://notjustdev-dummy.s3.us-east-2.amazonaws.com/images/products/mouse1.jpg
+- https://m.media-amazon.com/images/I/71VHR5DvVDL._AC_UL480_FMwebp_QL65_.jpg
 
-- https://notjustdev-dummy.s3.us-east-2.amazonaws.com/images/products/mouse2.jpg
+- https://m.media-amazon.com/images/I/614TW8uDuyL._AC_UL480_FMwebp_QL65_.jpg
 
-- https://notjustdev-dummy.s3.us-east-2.amazonaws.com/images/products/mouse3.jpg
+- https://m.media-amazon.com/images/I/71LWPMoZKeL._AC_UL480_FMwebp_QL65_.jpg
 
 ## Files
 - **products.ts**: A list of products having:

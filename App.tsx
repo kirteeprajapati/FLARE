@@ -4,16 +4,18 @@
  * https://github.com/react-native-community/react-native-template-typescript
  *
  * @format
- */
+ **/
+
   import 'react-native-gesture-handler';
   import React from 'react';
   import {View, StatusBar, useColorScheme} from 'react-native';     //imports
-  import {StripeProvider} from '@stripe/stripe-react-native';
-  
   import {Colors} from 'react-native/Libraries/NewAppScreen';
-  import Router from './src/router';                                //router folder
+  import Router from './src/router';  
   
-  import Amplify, {Auth} from 'aws-amplify';
+  import Amplify from 'aws-amplify'
+  import awsconfig from './src/aws-exports'
+  Amplify.configure(awsconfig)//router folder
+  
   import {withAuthenticator} from 'aws-amplify-react-native';
   
   import config from './src/aws-exports';
@@ -29,10 +31,6 @@
     return (
       <View style={backgroundStyle}>
         <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-        <StripeProvider publishableKey="pk_test_51IqIfWA2WcfjP4nohlwR7PdK6SEeIt5eenVLWcrduRWk5IlG9WSid3GFZiItmJS4de56nrynA3hblwhrW7FVGED500vznukyss">
-        {/* Router decides whih screen it should render */}
-          <Router />                                                                                                                                                  
-        </StripeProvider>
       </View>
     );
   };

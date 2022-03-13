@@ -11,11 +11,8 @@ import {
 import {Picker} from '@react-native-picker/picker';
 import {useNavigation, useRoute} from '@react-navigation/native';     //@stripe/stripe-react-native package
 import countryList from 'country-list';                               //to return country list we installed this module 
-import {Auth, DataStore, API, graphqlOperation} from 'aws-amplify';
-import {useStripe} from '@stripe/stripe-react-native';
+import {Auth, DataStore,} from 'aws-amplify';
 import {Order, OrderProduct, CartProduct} from '../../models';
-import {createPaymentIntent} from '../../graphql/mutations';
-
 import Button from '../../components/Button';
 import styles from './styles';
 
@@ -32,62 +29,16 @@ const AddressScreen = () => {
   const [city, setCity] = useState('');                                   //city
   const [clientSecret, setClientSecret] = useState<string | null>(null);  //optional
 
-  const {initPaymentSheet, presentPaymentSheet} = useStripe();
   const navigation = useNavigation();
   const route = useRoute();
-  const amount = Math.floor(route.params?.totalPrice * 100 || 0);
-
-  useEffect(() => {
-    fetchPaymentIntent();
-  }, []);
-
-  useEffect(() => {
-    if (clientSecret) {
-      initializePaymentSheet();
-    }
-  }, [clientSecret]);
-
-  const fetchPaymentIntent = async () => {
-    const response = await API.graphql(
-      graphqlOperation(createPaymentIntent, {amount}),
-    );
-    setClientSecret(response.data.createPaymentIntent.clientSecret);
-  };
-
-  const initializePaymentSheet = async () => {
-    if (!clientSecret) {
-      return;
-    }
-    const {error} = await initPaymentSheet({
-      paymentIntentClientSecret: clientSecret,
-    });
-    console.log('success');
-    if (error) {
-      Alert.alert(error);
-    }
-  };
-
-  const openPaymentSheet = async () => {
-    if (!clientSecret) {
-      return;
-    }
-    const {error} = await presentPaymentSheet({clientSecret});
-
-    if (error) {
-      Alert.alert(`Error code: ${error.code}`, error.message);
-    } else {
-      saveOrder();
-      Alert.alert('Success', 'Your payment is confirmed!');
-    }
-  };
-
+  
   const saveOrder = async () => {
     // get user details
-    const userData = await Auth.currentAuthenticatedUser();
+    const userData = await Auth.currentAuthenticatedUser();     //creating a new order
     // create a new order
     const newOrder = await DataStore.save(
       new Order({
-        userSub: userData.attributes.sub,
+        userSub: userData.attributes.sub,                        //saves new order with these options
         fullName: fullname,
         phoneNumber: phone,
         country,
@@ -103,7 +54,7 @@ const AddressScreen = () => {
 
     // attach all cart items to the order
     await Promise.all(
-      cartItems.map(cartItem =>
+      cartItems.map(cartItem =>                        //it waits until this data is filled
         DataStore.save(
           new OrderProduct({
             quantity: cartItem.quantity,
@@ -117,11 +68,6 @@ const AddressScreen = () => {
 
     // delete all cart items
     await Promise.all(cartItems.map(cartItem => DataStore.delete(cartItem)));
-
-    // redirect home
-    navigation.navigate('home');
-  };
-
   const onCheckout = () => {                                    //this function checks for errors and submits the form if filled correctly 
     if (addressError) {
       Alert.alert('Fix all field errors before submiting');
@@ -138,9 +84,9 @@ const AddressScreen = () => {
       return;
     }
 
-    // handle payments
-    openPaymentSheet();
-  };
+  //   // handle payments
+  //   openPaymentSheet();
+  // };
 
   const validateAddress = () => {
     if (address.length < 3) {                              //if address is 3 letter shot then it returns error

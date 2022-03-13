@@ -1,14 +1,6 @@
 {
-  "auth": {
-    "amazonclone85a249f8": {
-      "service": "Cognito",
-      "providerPlugin": "awscloudformation",
-      "dependsOn": [],
-      "customAuth": false
-    }
-  },
   "api": {
-    "amazonclone": {
+    "flare": {
       "service": "AppSync",
       "providerPlugin": "awscloudformation",
       "output": {
@@ -17,38 +9,39 @@
             "authenticationType": "API_KEY",
             "apiKeyConfig": {
               "apiKeyExpirationDays": 365,
-              "description": "api key amazon"
+              "apiKeyExpirationDate": "2023-03-13T00:18:30.924Z",
+              "description": "API Key for FLARE"
             }
           },
           "additionalAuthenticationProviders": []
         }
       }
-    },
-    "StripeWebhook": {
-      "service": "API Gateway",
-      "providerPlugin": "awscloudformation",
-      "dependsOn": [
-        {
-          "category": "function",
-          "resourceName": "StripeWebhook",
-          "attributes": [
-            "Name",
-            "Arn"
-          ]
-        }
-      ]
     }
   },
-  "function": {
-    "CreatePaymentIntent": {
-      "build": true,
+  "auth": {
+    "flare4c51d4a1": {
+      "service": "Cognito",
       "providerPlugin": "awscloudformation",
-      "service": "Lambda"
-    },
-    "StripeWebhook": {
-      "build": true,
-      "providerPlugin": "awscloudformation",
-      "service": "Lambda"
+      "dependsOn": [],
+      "customAuth": false,
+      "frontendAuthConfig": {
+        "socialProviders": [],
+        "usernameAttributes": [],
+        "signupAttributes": [
+          "EMAIL"
+        ],
+        "passwordProtectionSettings": {
+          "passwordPolicyMinLength": 8,
+          "passwordPolicyCharacters": []
+        },
+        "mfaConfiguration": "OFF",
+        "mfaTypes": [
+          "SMS"
+        ],
+        "verificationMechanisms": [
+          "EMAIL"
+        ]
+      }
     }
   }
 }

@@ -18,7 +18,7 @@ const ProductScreen = () => {
   );
   const [quantity, setQuantity] = useState(1);
 
-  const navigation = useNavigation();
+  const navigation = useNavigation();                        //navigation module called
   const route = useRoute();                                   //called route
   // Route props
   useEffect(() => {
@@ -49,7 +49,7 @@ const ProductScreen = () => {
     });
 
     await DataStore.save(newCartProduct);
-    navigation.navigate('shoppingCart');
+    navigation.navigate('shoppingCart');                 //in the backend 
   };
 
   if (!product) {

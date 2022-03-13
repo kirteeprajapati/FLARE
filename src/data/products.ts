@@ -1,8 +1,8 @@
 export default [
   {
     id: '1',
-    title: "Clean Architecture: A Craftsman's Guide to Software Structure and Design",
-    image: 'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/images/products/cleanarchitecture.jpg',
+    title: "Whisper Ultra Clean Sanitary Pads For Women, X-Large +, Pack of 50 Napkins",
+    image: 'https://thumbs.dreamstime.com/b/sanitary-pad-pink-background-sanitary-pad-pink-background-top-view-173245971.jpg',
     avgRating: 4,
     ratings: 1325,
     price: 20.98,
@@ -10,8 +10,8 @@ export default [
   },
   {
     id: '2',
-    title: "Clean Code: A Handbook of Agile Software Craftsmanship",
-    image: 'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/images/products/cleancode.jpg',
+    title: "Ultra-thin pads ",
+    image: 'https://cdn.nuawoman.com/global/img/PAD-COT-03-22/SP-Upgrade-Carousel2.png',
     avgRating: 4.8,
     ratings: 2989,
     price: 32.98,
@@ -19,16 +19,16 @@ export default [
   },
   {
     id: '3',
-    title: "New 2021 Imac",
-    image: 'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/images/products/imac1.jpg',
+    title: "",
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlTjNB5ComP4i9-8g-aH6blKZGe_SQ4K_35A&usqp=CAU',
     avgRating: 3.8,
     ratings: 2989,
     price: 4206.9,
   },
   {
     id: '4',
-    title: "Havit Mechanical Keyboard Wired 89 Keys Gaming Keyboard Red Switch Keyboard with PBT Keycaps for PC Gamer",
-    image: 'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/images/products/keyboard1.jpg',
+    title: "Tampon",
+    image: 'https://post.healthline.com/wp-content/uploads/2019/09/Tampon_Hand_732x549-thumbnail.jpg',
     avgRating: 4.8,
     ratings: 2989,
     price: 99.98,

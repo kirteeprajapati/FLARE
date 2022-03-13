@@ -1,25 +1,14 @@
 import React, {useState, useEffect} from 'react';
-import {
-  View,
-  StyleSheet,
-  FlatList,
-  Text,
-  ActivityIndicator,
-} from 'react-native';
+import {View,FlatList,Text,ActivityIndicator,} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 import {DataStore, Auth} from 'aws-amplify';
-
 import {Product, CartProduct} from '../../models';
 import CartProductItem from '../../components/CartProductItem';
 import Button from '../../components/Button';
 
-// import products from '../../data/cart';
-
 const ShopingCartScreen = () => {
   const [cartProducts, setCartProducts] = useState<CartProduct[]>([]);
-
   const navigation = useNavigation();
-
   const fetchCartProducts = async () => {
     const userData = await Auth.currentAuthenticatedUser();
     // TODO query only my cart items
